@@ -33,7 +33,7 @@ jobs:
         run: dotnet build  --configuration Release
         working-directory: backend/RegistationApplication
       - name: Publish
-        run: dotnet publish -c Release -o ./output
+        run: dotnet publish -c Release -o ../../output
         working-directory: backend/RegistationApplication
       - name: 'Resolve Project Dependencies Using Dotnet'
         shell: pwsh
