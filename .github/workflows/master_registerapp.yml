@@ -30,10 +30,10 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Build with dotnet
-        run: dotnet build backend/RegistationApplication.csproj.user --configuration Release
+        run: dotnet build backend/RegistationApplication.csproj --configuration Release
 
       - name: Publish
-        run: dotnet publish backend/RegistationApplication.csproj.user -c Release -o ./output
+        run: dotnet publish backend/RegistationApplication.csproj -c Release -o ./output
 
       - name: 'Resolve Project Dependencies Using Dotnet'
         shell: pwsh
