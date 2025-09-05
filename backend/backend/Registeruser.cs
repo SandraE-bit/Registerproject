@@ -5,16 +5,16 @@ using Microsoft.Extensions.Logging;
 
 namespace backend;
 
-public class Function1
+public class Registeruser
 {
-    private readonly ILogger<Function1> _logger;
+    private readonly ILogger<Registeruser> _logger;
 
-    public Function1(ILogger<Function1> logger)
+    public Registeruser(ILogger<Registeruser> logger)
     {
         _logger = logger;
     }
 
-    [Function("Function1")]
+    [Function("Registeruser")]
     public void Run([CosmosDBTrigger(
         databaseName: "usersdb",
         containerName: "users",
