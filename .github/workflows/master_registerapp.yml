@@ -49,11 +49,10 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_87E8328FBBCF4DD4A14AED1504752685 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3BDC8B159BD04687AC52BE0521B17FE7 }}
 
-      - name: 'Run Azure Functions Action'
+      - name: Deploy Azure Function
         uses: Azure/functions-action@v1
-        id: fa
         with:
           app-name: 'Registerapp'
           slot-name: 'Production'
-          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+          package: 'backend/RegistationApplication/publish'
           
