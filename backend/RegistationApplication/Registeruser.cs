@@ -18,7 +18,7 @@ public class Registeruser
     public void Run([CosmosDBTrigger(
         databaseName: "usersdb",
         containerName: "users",
-        Connection = "cosmosconnection",
+        Connection = "COSMOS_CONN",
         LeaseContainerName = "leases",
         CreateLeaseContainerIfNotExists = true)] IReadOnlyList<MyDocument> input)
     {
