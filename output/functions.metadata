@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Registeruser",
+    "scriptFile": "RegistationApplication.dll",
+    "entryPoint": "RegistationApplication.Registeruser.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "cosmosDBTrigger",
+        "databaseName": "usersdb",
+        "containerName": "users",
+        "connection": "cosmosconnection",
+        "leaseContainerName": "leases",
+        "createLeaseContainerIfNotExists": true,
+        "properties": {}
+      }
+    ]
+  }
+]
