@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
-namespace backend;
+namespace RegistationApplication;
 
 public class Registeruser
 {

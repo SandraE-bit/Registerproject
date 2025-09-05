@@ -29,6 +29,12 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
+      - name: Build with dotnet
+        run: dotnet build backend/RegistationApplication.csproj --configuration Release
+
+      - name: Publish
+        run: dotnet publish backend/RegistationApplication.csproj -c Release -o ./output
+
       - name: 'Resolve Project Dependencies Using Dotnet'
         shell: pwsh
         run: |
