@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
@@ -20,12 +19,13 @@ public class Registeruser
         containerName: "users",
         Connection = "COSMOS_CONN",
         LeaseContainerName = "leases",
-        CreateLeaseContainerIfNotExists = true)] IReadOnlyList<MyDocument> input)
+        CreateLeaseContainerIfNotExists = true)]
+        IReadOnlyList<MyDocument> input)
     {
         if (input != null && input.Count > 0)
         {
-            _logger.LogInformation("Documents modified: " + input.Count);
-            _logger.LogInformation("First document Id: " + input[0].id);
+            _logger.LogInformation("Documents modified: {count}", input.Count);
+            _logger.LogInformation("First document Id: {id}", input[0].id);
         }
     }
 }
@@ -33,10 +33,6 @@ public class Registeruser
 public class MyDocument
 {
     public string id { get; set; }
-
-    public string Text { get; set; }
-
-    public int Number { get; set; }
-
-    public bool Boolean { get; set; }
+    public string name { get; set; }
+    public DateTime timestamp { get; set; }
 }
