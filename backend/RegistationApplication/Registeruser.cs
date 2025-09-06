@@ -32,7 +32,7 @@ public class Registeruser
 
 public class MyDocument
 {
-    public string id { get; set; }
-    public string name { get; set; }
-    public DateTime timestamp { get; set; }
+    public string? id { get; set; }
+    public string? name { get; set; }
+    public DateTime Timestamp { get; set; }
 }
